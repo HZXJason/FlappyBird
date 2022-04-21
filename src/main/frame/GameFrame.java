@@ -5,6 +5,10 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import util.Constant;
 public class GameFrame extends Frame {
+    //实例化gamebackground类
+    private GameBackGround gameBackGround;
+
+
     //构造方法
     public GameFrame()
     {
@@ -19,6 +23,30 @@ public class GameFrame extends Frame {
                 System.exit(0); //结束程序
             }
         });
+        initGame();
+        new run().start();
+    }
+    public void initGame()
+    {
+        gameBackGround =new GameBackGround();
+    }
+    class run extends  Thread
+    {
+        @Override
+        public void run()
+        {
+            repaint();
+            try {
+                Thread.sleep(30);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    @Override
+    public void update(Graphics g)
+    {
+        gameBackGround.draw(g);
     }
 
 }
