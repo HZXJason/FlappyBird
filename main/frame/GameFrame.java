@@ -16,7 +16,7 @@ public class GameFrame extends Frame {
         setSize(Constant.FARM_WIDTH,Constant.FARM_HEIGHT);//窗口大小
         setTitle(Constant.FARM_TITLE);//标题
         setLocation(Constant.FARM_X,Constant.FARM_Y);//初始位置
-        setResizable(false);//大小不可改变
+        setResizable(true);//大小可改变
         addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent windowEvent) {
@@ -24,13 +24,13 @@ public class GameFrame extends Frame {
             }
         });
         initGame();
-        new run().start();
+        new Run().start();
     }
     public void initGame()
     {
         gameBackGround =new GameBackGround();
     }
-    class run extends  Thread
+    class Run extends  Thread
     {
         @Override
         public void run()

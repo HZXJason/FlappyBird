@@ -12,10 +12,13 @@ public class GameBackGround {
     //构造器初始化
     public GameBackGround()
     {
-        BufferedImage image= GameUtil.loadBufferedImage(Constant.BK_IMG_PATH);
+        bkground= GameUtil.loadBufferedImage(Constant.BK_IMG_PATH);
     }
     public void draw(Graphics g)
     {
+        //先填充背景色
+
+
         //得到图片的高和宽
         int height = bkground.getHeight();
         int weight = bkground.getWidth();
